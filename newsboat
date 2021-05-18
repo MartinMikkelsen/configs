@@ -1,0 +1,8 @@
+browser "open -a safari '%u'"
+
+color info              color15 color235 bold
+color listfocus         color10 color237
+color listfocus_unread  color9  color237
+color listnormal        color7  default
+color listnormal_unread color15 default
+
