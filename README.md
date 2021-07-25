@@ -1,2 +1,2 @@
 # configs
-Config files
+dot files
