@@ -38,19 +38,38 @@ set mouse=a " use mouse for scroll or window size
 
 
 vmap <OS-8> {
-vmap <OS-9> }   
+vmap <OS-9> }
 
 " -----------------------------------------------------------------------------
 "  VIMTEX OPTIONS
 "  ----------------------------------------------------------------------------
-call plug#begin('~/.vim/plugged')
-" A Vim Plugin for Lively Previewing LaTeX PDF Output
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-call plug#end()
 
-let g:livepreview_previewer = 'open -a Preview'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='skim'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 autocmd Filetype tex setl updatetime=1
+
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+inoremap jj <esc>
+inoremap jk <esc>
+
+nnoremap ;2 :tabp<CR>
+nnoremap ;3 :tabn<CR>
 
 " -----------------------------------------------------------------------------
 "  APPEARANCE
@@ -59,4 +78,3 @@ autocmd Filetype tex setl updatetime=1
 syntax on
 set background=dark
 let g:onedark_termcolors=16
-
