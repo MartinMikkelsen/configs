@@ -44,3 +44,20 @@ main.exe: main.cs cmath.dll
 	mcs $< -reference:$(word 2,$^)
 clean:
 	$(RM) *.dll *.exe out*
+
+#LaTeX
+
+.PHONEY:default
+
+default: expo.pdf ms.pdf
+
+ms.pdf: ms.tex
+	pdflatex $<
+	pdflatex $<
+#	bibtex $<
+#	pdflatex $<
+
+
+.PHONEY:clean
+clean:
+	$(RM) main *.o *.txt *.ppl *.pdf *.png
